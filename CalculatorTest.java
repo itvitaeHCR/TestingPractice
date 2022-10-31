@@ -2,76 +2,38 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class CalculatorTest {
-
-    // addition
     @Test
-    void additionTwoThreeEqualsFive() {
+    void cijferMinusTen() {
         Calculator c = new Calculator();
-        assertEquals(5, c.addition(2, 3));
-    }
-    @Test
-    void additionZeroZeroEqualsZero() {
-        Calculator c = new Calculator();
-        assertEquals(0, c.addition(0, 0));
+        assertThrows(IllegalArgumentException.class, () -> {
+            c.nummerNaarCharCijfer(-10);
+        });
     }
 
-    // subtraction
     @Test
-    void subtractionThreeTwoEqualsOne() {
+    void cijferTwenty() {
         Calculator c = new Calculator();
-        assertEquals(1, c.subtraction(3, 2));
-    }
-    @Test
-    void subtractionTwoThreeEqualsMinusOne() {
-        Calculator c = new Calculator();
-        assertEquals(-1, c.subtraction(2, 3));
+        assertEquals('F', c.nummerNaarCharCijfer(20));
     }
 
-    // multiplication
     @Test
-    void multiplicationThreeTwoEqualsSix() {
+    void cijferSixty() {
         Calculator c = new Calculator();
-        assertEquals(6, c.multiplication(3, 2));
+        assertEquals('D', c.nummerNaarCharCijfer(60));
     }
     @Test
-    void multiplicationMinusOneFiveEqualsMinusFive() {
+    void cijferSeventy() {
         Calculator c = new Calculator();
-        assertEquals(-5, c.multiplication(-1, 5));
-    }
-
-    // division
-    @Test
-    void divisionSixTwoEqualsThree() {
-        Calculator c = new Calculator();
-        assertEquals(3, c.division(6, 2));
+        assertEquals('C', c.nummerNaarCharCijfer(70));
     }
     @Test
-    void divisionThreeThreeEqualsOne() {
+    void cijferEighty() {
         Calculator c = new Calculator();
-        assertEquals(1, c.division(3, 3));
-    }
-
-    // square root
-    @Test
-    void sqrtNineEqualsThree() {
-        Calculator c = new Calculator();
-        assertEquals(3, c.squareRoot(9));
+        assertEquals('B', c.nummerNaarCharCijfer(80));
     }
     @Test
-    void sqrtSixteenEqualsFour() {
+    void cijferNinety() {
         Calculator c = new Calculator();
-        assertEquals(4, c.squareRoot(16));
-    }
-
-    // power
-    @Test
-    void powerThreeFourEqualsEightyOne() {
-        Calculator c = new Calculator();
-        assertEquals(81, c.power(3, 4));
-    }
-    @Test
-    void powerFourThreeEqualsSixtyOne() {
-        Calculator c = new Calculator();
-        assertEquals(64, c.power(4, 3));
+        assertEquals('A', c.nummerNaarCharCijfer(90));
     }
 }

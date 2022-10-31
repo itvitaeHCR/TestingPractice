@@ -1,32 +1,17 @@
 public class Calculator {
-    // addition
-    public int addition(int a, int b) {
-        return a + b;
+    public char nummerNaarCharCijfer(int cijfer) {
+        if (cijfer < 0) {
+            throw new IllegalArgumentException("kan niet lager zijn dan nul");
+        } else if (cijfer < 60) {
+            return 'F';
+        } else if (cijfer < 70) {
+            return 'D';
+        } else if (cijfer < 80) {
+            return 'C';
+        } else if (cijfer < 90) {
+            return 'B';
+        } else {
+            return 'A';
+        }
     }
-
-    // subtraction
-    public int subtraction(int a, int b) {
-        return a - b;
-    }
-
-    // multiplication
-    public int multiplication(int a, int b) {
-        return a * b;
-    }
-
-    // division
-    public int division(int a, int b) {
-        return a / b;
-    }
-
-    // square root
-    public double squareRoot(int a) {
-        return Math.sqrt(a);
-    }
-
-    // power
-    public double power(int a, int b) {
-        return Math.pow(a, b);
-    }
-
 }
